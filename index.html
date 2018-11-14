@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+  </head> 
+  <body>
+    <!-- Login Page -->
+    <div id="login-container">
+        <form id="login-form" action="">
+            <input id="username" type="text" placeholder="Enter username" required/>
+            <button id="login-submit" type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+
+    
+    <!-- ENTIRE PAGE AFTER LOGIN -->
+    <div id="main">
+        <!-- Navigation TopBar -->
+        <div class="nav-container">
+            <p id="title">Module 6 Chatroom</p>
+            <p id="current-room"></p>
+            <p id="current-user"></p>
+        </div>
+        <!-- Body of Chat Area -->
+        <div id="main-feature">
+            <!-- Left Column -->
+            <div id="menu-container">
+                <div class="room-tab-container">
+                    <button class="room-current-tab tab">
+                        <span class="room-current-tab-name" >Public</span> <i class="fas fa-caret-down"></i>
+                    </button>
+                    <button id="public-tab" class="tab room-tab-select inset room-hide">
+                        Public
+                    </button>
+                    <button id="private-tab" class="tab room-tab-select room-hide">
+                        Private
+                    </button>
+                    <button id="create-tab" class="tab room-tab-select room-hide">
+                        Create
+                    </button>
+                </div>
+
+                <div class="search-bar-container">
+                    <input class="search-bar" type="text" placeholder="Search chatrooms..." />
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="room-container"></div>
+
+                <form class="create-room-container">
+                    <input class="create-room-name" type="text" placeholder="Enter room name..." />
+                    <div class="create-room-private-wrapper">
+                        <button class="create-room-private-switch">Private?</button>
+                    </div>
+                    <input class="create-room-password" type="password" placeholder="Enter room password..." />
+                    <input class="create-room-submit" type="submit" value="Create room" />
+                </form>
+
+                <form class="delete-form">
+                    <input type="text" class="delete-room-name" placeholder="Admin: Delete room"/>
+                    <input type="submit" class="delete-room-submit" value="delete" />
+                </form>
+
+            </div>
+
+            <!-- Center Column -->
+            <div id="chat-container">
+                <div id="chat-display"></div>
+                <form id="chat-box" action="">
+                    <input id="chat-text" type="text" placeholder="Type a message..."/>
+                    <button id="chat-submit" type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+
+            <!-- Left Column -->
+            <div id="user-container">
+                <div class="user-tab-container">
+                    <button class="user-current-tab tab">
+                        <span class="user-current-tab-name" >All users</span> <i class="fas fa-caret-down"></i>
+                    </button>
+                    <button id="all-users-tab" class="tab user-tab-select user-inset user-hide">
+                        All users
+                    </button>
+                    <button id="current-users-tab" class="tab user-tab-select user-hide">
+                        Users in current room
+                    </button>
+                </div>
+
+                <div class="user-wrapper">
+                    <!-- <div class="user">
+                        <p class="user-name">Eric</p>
+                    </div> -->
+                </div>
+
+                <form class="kick-user">
+                    <input type="text" class="kick-user-name" placeholder="Admin: Kick user" />
+                    <input type="submit" class="kick-user-submit" value="delete" />
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,490 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+nav
+*/
+
+.nav-container {
+    width: 100vw;
+    height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0px 0px 5px #e5e5e5;
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans';
+}
+
+#title {
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#current-room {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 500px);
+    height: 50px;
+    text-align: center
+}
+
+#current-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+}
+
+/*
+main
+*/
+
+#main {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#main-feature {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/*
+login
+*/
+
+#login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+}
+
+#username {
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    font-size: 1.25em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#login-submit{
+    display: block;
+    width: 100px;
+    height: 50px;
+    font-size: 1.1em;
+    border: none;
+    margin-top: 20px;
+    margin: 0 auto;
+    color: rgb(130,130,130);
+}
+
+#login-submit:hover {
+    font-size: 1.5em;
+}
+
+/* 
+menu 
+*/
+
+#menu-container {
+    width: 250px;
+    height: calc(100vh - 50px);
+    border-right: 1px solid #e5e5e5;
+}
+
+.room-tab-container {
+    position: relative;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.tab {
+    width: 100%;
+    height: 70px;
+    border: none;
+    /* border-bottom: 1px solid #e5e5e5; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: rgb(107, 107, 107);
+    z-index: 5;
+}
+
+.room-current-tab-name {
+    padding-right: 10px;
+}
+
+.tab:hover {
+    color: rgb(0, 153, 255);
+}
+
+.room-tab-select {
+    border-top: 1px solid #e5e5e5;
+    background-color: #f7f7f7
+}
+
+.inset {
+    box-shadow: inset 0px 0px 10px #e8e8e8;
+    background-color: #f0efef;
+}
+
+.room-hide {
+    display: none;
+}
+
+/*
+search
+*/
+
+.search-bar-container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    outline: none;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27%;
+    height: inherit; 
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    color: rgb(192, 192, 192);
+    transition: .1s;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    color: rgb(0, 153, 255);
+}
+
+.search-bar {
+    width: 73%;
+    height: inherit;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    outline: none;
+    font-size: .9em;
+    font-family: 'Open Sans';
+    text-align: center;
+    padding: 0 0 0 20px;
+}
+
+/* 
+chat 
+*/
+
+#chat-container {
+    width: calc(100% - 500px);
+    height: calc(100vh - 50px);
+    border-right: 1px solid #e5e5e5;
+}
+
+#chat-display {
+    overflow: scroll;
+}
+
+#chat-box {
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid #e5e5e5;
+}
+
+#chat-text {
+    width: 90%;
+    height: 70px;
+    border: none;
+    outline: none;
+    font-family: 'Open Sans';
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+#chat-submit {
+    width: 10%;
+    height: 70px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: rgb(140,140,140);
+    cursor: pointer;
+}
+
+#chat-submit:hover {
+    color: rgb(0, 153, 255);
+}
+
+#chat-display {
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.chat-message-wrapper {
+    font-family: 'Open Sans';
+    padding: 10px;
+}
+
+.chat-message {
+    color: rgb(119, 118, 118);
+}
+
+/* 
+user-container
+*/
+
+#user-container {
+    width: 250px;
+    height: calc(100vh - 50px);
+}
+
+.user-tab-container {
+    position: relative;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.user-current-tab-name {
+    padding-right: 10px;
+}
+
+.user-tab-select {
+    border-top: 1px solid #e5e5e5;
+    background-color: #f7f7f7
+}
+
+.user-hide {
+    display: none;
+}
+
+.user-inset {
+    background-color: #f0efef;
+}
+
+/*
+room
+*/
+
+.room {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: 'Open Sans';
+    cursor: pointer;
+}
+
+.room:hover {
+    color: rgb(0, 153, 255);
+}
+
+.room-users {
+    color: rgb(119, 118, 118);
+    pointer-events: none;
+}
+
+.room-name {
+    pointer-events: none;
+}
+/*
+user
+*/
+
+.user {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: 'Open Sans';
+    cursor: pointer;
+}
+
+.user:hover {
+    color: rgb(0, 153, 255);
+}
+
+/*
+create room
+*/
+
+.create-room-container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 20px;
+}
+
+.create-room-name {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+}
+
+.create-room-password {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+    display: none;
+}
+
+.create-room-submit {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    outline: none;
+}
+
+.create-room-submit:hover {
+    color: rgb(0, 153, 255);
+}
+
+.create-room-private-wrapper {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    outline: none;
+}
+
+.create-room-private-switch {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    outline: none;
+    font-size: .9em;
+}
+
+
+
+.blue {
+    background-color: rgb(0, 153, 255);
+}
+
+/*
+icons
+*/
+
+.fa-user {
+    font-size: 1.1em;
+}
+
+.delete-form {
+    width: 100%;
+    position: relative;
+    border-top:20px;
+    top:10px;
+}
+
+.delete-room-name {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+}
+
+.delete-room-submit {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+    
+}
+
+/*
+delfe user
+*/
+
+.kick-user {
+    width: 100%;
+    position: relative;
+    top: 200px;
+}
+
+.kick-user-name {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+}
+
+.kick-user-submit {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+}

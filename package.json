@@ -1,0 +1,24 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "main": "chat-server.js",
+  "scripts": {
+    "start": "nodemon chat-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://khye@bitbucket.org/cse330/fall2018-module6-group-455060-454998.git"
+  },
+  "homepage": "https://bitbucket.org/cse330/fall2018-module6-group-455060-454998#readme",
+  "description": ""
+}
