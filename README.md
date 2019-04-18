@@ -1,4 +1,4 @@
-#Online Virtual Chatroom
+# ONLINE VIRTUAL CHATROOM
 
 This is a Chat Room application using Node.js and Socket.io
 Users can login, create chatrooms and instant message each other. 
